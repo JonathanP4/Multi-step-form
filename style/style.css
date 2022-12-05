@@ -180,6 +180,7 @@ input[type="email"] {
 }
 
 input[type="range"] {
+  cursor: pointer;
   appearance: none;
   width: 10%;
 }
