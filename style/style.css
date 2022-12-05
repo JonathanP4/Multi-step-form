@@ -40,11 +40,10 @@ input[type="email"] {
 .form-container {
   padding: 1rem;
   border-radius: 1em;
-  gap: 5rem;
+  gap: 4rem;
+  width: 65vw;
   background-color: var(--White);
   align-items: center;
-  min-height: 85vh;
-  width: 75vw;
   justify-content: space-between;
   box-shadow: 0 0 7px var(--Light-blue);
 }
@@ -56,16 +55,18 @@ input[type="email"] {
 }
 
 .steps-menu {
-  border-radius: 1em;
+  border-radius: 1rem;
   padding: 1.5rem;
   min-height: 50vh;
   flex-direction: column;
   gap: 2rem;
   background-image: url('/Multi-step-form/images/bg-sidebar-desktop.svg');
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: bottom center;
   align-items: stretch;
-  min-height: 80vh;
-  flex: 1 1 25%;
+  height: 70vh;
+  flex: 1 1 30%;
 }
 
 .step-number {
@@ -99,12 +100,17 @@ input[type="email"] {
 
 .form {
   flex: 0 1 70%;
-  padding-right: 5rem;
-  gap: 1rem;
+  padding-right: 4rem;
+  gap: .5rem;
   display: flex;
   flex-direction: column;
   text-align: left;
-  min-height: 80%;
+  margin-top: 2rem;
+  height: 65vh;
+}
+
+.form.inactive {
+  display: none;
 }
 
 .form-title,
@@ -124,12 +130,72 @@ input[type="email"] {
   color: var(--White);
   width: fit-content;
   padding: .8rem;
+  margin-top: 2rem;
   border-radius: .6rem;
   align-self: flex-end;
-  font-size: 1.06em;
-  margin-top: 2rem;
+  font-size: 1em;
   outline: none;
   cursor: pointer;
+  border: none;
+}
+
+.plan-selector-container {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.plan {
+  flex: 1 0 30%;
+  border-radius: .6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid var(--Light-gray);
+}
+
+.plan>img {
+  width: 35%;
+}
+
+.plan-title {
+  margin-top: 3rem;
+  font-size: 1.2em;
+  color: var(--Marine-blue);
+}
+
+.price {
+  color: var(--Cool-gray);
+}
+
+.plan-time-container {
+  margin-top: 1.7rem;
+  background-color: var(--Magnolia);
+  padding: .7rem;
+  gap: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+
+input[type="range"] {
+  appearance: none;
+  width: 10%;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: var(--Marine-blue);
+  border-radius: 1rem;
+  padding: .2rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  appearance: none;
 }
 
 :root {

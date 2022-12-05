@@ -49,8 +49,9 @@
       </div>
     </div>
     <!-- Sidebar end -->
+
     <!-- Step 1 start -->
-    <div class="form">
+    <div class="form" id="step_1">
       <div>
         <h1 class="form-title">Personal info</h1>
         <h2 class="form-subtitle">Please provide your name, email address, and phone number.</h2>
@@ -73,6 +74,39 @@
       <button class="next-step-btn">Next Step</button>
     </div>
     <!-- Step 1 end -->
+
+    <!-- Step 2 start -->
+    <div class="form inactive" id="step_2">
+      <h1 class="form-title">Select your plan</h1>
+      <h2 class="form-subtitle">You have the option of monthly or yearly billing.</h2>
+
+      <div class="plan-selector-container">
+        <div class="plan">
+          <img src="images/icon-arcade.svg" alt="">
+          <div>
+            <h1 class="plan-title">Arcade</h1>
+            <p class="price">$9/mo</p>
+          </div>
+        </div>
+        <div class="plan">
+          <img src="images/icon-advanced.svg" alt="">
+          <h1 class="plan-title">Advanced</h1>
+          <p class="price">$12/mo</p>
+        </div>
+        <div class="plan">
+          <img src="images/icon-pro.svg" alt="">
+          <h1 class="plan-title">Pro</h1>
+          <p class="price">$15/mo</p>
+        </div>
+      </div>
+      <div class="plan-time-container">
+        <p class="time">Monthly</p>
+        <input type="range" name="" id="" min="1" max="2">
+        <p class="time">Yearly</p>
+      </div>
+      <button class="next-step-btn">Next Step</button>
+    </div>
+    <!-- Step 2 end -->
   </main>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
