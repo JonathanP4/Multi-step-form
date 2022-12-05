@@ -1,0 +1,149 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background-color: var(--Magnolia);
+  color: var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+input[type="tel"],
+input[type="text"],
+input[type="email"] {
+  padding: .6rem;
+  border-radius: .5rem;
+  border: 1px solid var(--Light-gray);
+  margin: .6rem 0;
+  width: 100%;
+  font-size: 1.05em;
+}
+
+.form-container,
+.steps-menu,
+.form {
+  display: flex;
+}
+
+.form-container {
+  padding: 1rem;
+  border-radius: 1em;
+  gap: 5rem;
+  background-color: var(--White);
+  align-items: center;
+  min-height: 85vh;
+  width: 75vw;
+  justify-content: space-between;
+  box-shadow: 0 0 7px var(--Light-blue);
+}
+
+.sidebar-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.steps-menu {
+  border-radius: 1em;
+  padding: 1.5rem;
+  min-height: 50vh;
+  flex-direction: column;
+  gap: 2rem;
+  background-image: url('/Multi-step-form/images/bg-sidebar-desktop.svg');
+  background-size: cover;
+  align-items: stretch;
+  min-height: 80vh;
+  flex: 1 1 25%;
+}
+
+.step-number {
+  padding: .6rem .8rem;
+  font-size: 1em;
+  border: 1px solid var(--White);
+  border-radius: 100%;
+  font-weight: 700;
+}
+
+.step-number.active {
+  color: var(--Marine-blue);
+  background-color: var(--Light-blue);
+}
+
+.steps-info {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+}
+
+.step-title {
+  font-size: .8em;
+  font-weight: 400;
+  color: var(--Cool-gray);
+}
+
+.step-description {
+  font-size: 1em;
+}
+
+.form {
+  flex: 0 1 70%;
+  padding-right: 5rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-height: 80%;
+}
+
+.form-title,
+.form-paragraph {
+  color: var(--Marine-blue);
+}
+
+.form-subtitle {
+  color: var(--Cool-gray);
+  font-size: 1em;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.next-step-btn {
+  background-color: var(--Marine-blue);
+  color: var(--White);
+  width: fit-content;
+  padding: .8rem;
+  border-radius: .6rem;
+  align-self: flex-end;
+  font-size: 1.06em;
+  margin-top: 2rem;
+  outline: none;
+  cursor: pointer;
+}
+
+:root {
+  /*Primary*/
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+
+  /*Neutral*/
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%)
+}
