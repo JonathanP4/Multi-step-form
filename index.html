@@ -18,14 +18,14 @@
     <!-- Sidebar start -->
     <div class="steps-menu">
       <div class="sidebar-items">
-        <a class="step-number active" href="#">1</a>
+        <a class="step-number active" href="#" id="1">1</a>
         <div class="steps-info">
           <h1 class="step-title">Step 1</h1>
           <h2 class="step-description">Your info</h2>
         </div>
       </div>
       <div class="sidebar-items">
-        <a class="step-number" href="#">2</a>
+        <a class="step-number" href="#" id="2">2</a>
         <div class="steps-info">
           <h1 class="step-title">Step 2</h1>
           <h2 class="step-description">Select plan</h2>
@@ -33,7 +33,7 @@
 
       </div>
       <div class="sidebar-items">
-        <a class="step-number" href="#">3</a>
+        <a class="step-number" href="#" id="3">3</a>
         <div class="steps-info">
           <h1 class="step-title">Step 3</h1>
           <h2 class="step-description">Add-ons</h2>
@@ -41,7 +41,7 @@
 
       </div>
       <div class="sidebar-items">
-        <a class="step-number" href="#">4</a>
+        <a class="step-number" href="#" id="4">4</a>
         <div class="steps-info">
           <h1 class="step-title">Step 4</h1>
           <h2 class="step-description">Summary</h2>
@@ -54,7 +54,7 @@
     <div class="form" id="step_1">
       <div>
         <h1 class="form-title">Personal info</h1>
-        <h2 class="form-subtitle">Please provide your name, email address, and phone number.</h2>
+        <h2 class="form-subtitle mb-1">Please provide your name, email address, and phone number.</h2>
       </div>
 
       <div>
@@ -71,14 +71,18 @@
         <p class="form-paragraph">Phone Number</p>
         <input type="tel" name="" id="" placeholder="e.g. +1 234 567 890">
       </div>
-      <button class="next-step-btn">Next Step</button>
+      <div class="d-flex mt-2">
+        <a href="#" class="form-subtitle back-btn">Go Back</a>
+        <button class="next-step-btn" id="btn-1">Next Step</button>
+      </div>
+
     </div>
     <!-- Step 1 end -->
 
     <!-- Step 2 start -->
     <div class="form inactive" id="step_2">
       <h1 class="form-title">Select your plan</h1>
-      <h2 class="form-subtitle">You have the option of monthly or yearly billing.</h2>
+      <h2 class="form-subtitle mb-1">You have the option of monthly or yearly billing.</h2>
 
       <div class="plan-selector-container">
         <div class="plan">
@@ -104,14 +108,17 @@
         <input type="range" name="" id="" min="0" max="1" value="0">
         <p class="form-secondary-subtitle">Yearly</p>
       </div>
-      <button class="next-step-btn">Next Step</button>
+      <div class="d-flex mt-2">
+        <a href="#" class="form-subtitle back-btn">Go Back</a>
+        <button class="next-step-btn" id="btn-2">Next Step</button>
+      </div>
     </div>
     <!-- Step 2 end -->
 
     <!-- Step 3 start -->
     <div class="form inactive" id="step_3">
       <h1 class="form-title">Pick add-ons</h1>
-      <h2 class="form-subtitle">add-ons help enhance your gaming experience</h2>
+      <h2 class="form-subtitle mb-1">add-ons help enhance your gaming experience</h2>
 
       <div class="service-selector-container">
         <div class="services">
@@ -134,7 +141,7 @@
           </div>
           <p class="price">+$2/mo</p>
         </div>
-        <div class="services">
+        <div class="services last">
           <div class="services-subcontainer">
             <input type="checkbox" name="" id="">
             <div class="d-flex-c">
@@ -145,14 +152,17 @@
           <p class="price">+$2/mo</p>
         </div>
       </div>
-      <button class="next-step-btn">Next Step</button>
+      <div class="d-flex mt-2">
+        <a href="#" class="form-subtitle back-btn">Go Back</a>
+        <button class="next-step-btn" id="btn-3">Next Step</button>
+      </div>
     </div>
     <!-- Step 3 end -->
 
     <!-- Step 4 start -->
     <div class="form inactive" id="step_4">
       <h1 class="form-title">Finishing up</h1>
-      <h2 class="form-subtitle">Double check everything looks OK before confirming</h2>
+      <h2 class="form-subtitle mb-1">Double check everything looks OK before confirming</h2>
       <div class="service-selector-container">
         <div class="summary">
           <div class="services-subcontainer first">
@@ -176,12 +186,13 @@
           <p class="price-summary-title-purple">+$12/month</p>
         </div>
       </div>
-      <button class="next-step-btn">Next Step</button>
+      <div class="d-flex mt-1">
+        <a href="#" class="form-subtitle back-btn">Go Back</a>
+        <button class="confirm-btn">Confirm</button>
+      </div>
     </div>
     <!-- Step 4 end -->
   </main>
-  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </body>
 
 </html>

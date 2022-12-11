@@ -20,6 +20,10 @@ a {
   color: var(--White);
 }
 
+.last {
+  margin-bottom: -0.1rem;
+}
+
 input[type="tel"],
 input[type="text"],
 input[type="email"] {
@@ -34,6 +38,20 @@ input[type="email"] {
 .d-flex-c {
   display: flex;
   flex-direction: column;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.d-flex.mt-2 {
+  margin-top: 2rem;
+}
+
+.d-flex.mt-1 {
+  margin-top: 1.6rem;
 }
 
 .form-container,
@@ -131,6 +149,9 @@ input[type="email"] {
   color: var(--Cool-gray);
   font-size: 1em;
   font-weight: 400;
+}
+
+.form-subtitle.mb-1 {
   margin-bottom: 1rem;
 }
 
@@ -144,7 +165,6 @@ input[type="email"] {
   color: var(--White);
   width: fit-content;
   padding: .8rem;
-  margin-top: 2rem;
   border-radius: .6rem;
   align-self: flex-end;
   font-size: 1em;
@@ -239,6 +259,7 @@ input[type="email"] {
 }
 
 .summary {
+  border-radius: .6rem;
   justify-content: center;
   padding: 1.2rem;
   gap: 1rem;
@@ -257,6 +278,20 @@ input[type="email"] {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem;
+}
+
+.confirm-btn {
+  color: var(--White);
+  width: fit-content;
+  padding: .8rem 1.23rem;
+  border-radius: .6rem;
+  align-self: flex-end;
+  font-size: 1em;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  background-color: var(--Purplish-blue);
+  /*width: 97.66px;*/
 }
 
 input[type="range"] {
@@ -284,6 +319,8 @@ input[type="checkbox"] {
   height: 18px;
   width: 18px;
 }
+
+
 
 /*input[type="checkbox"]:checked {
   border: 1px solid var(--Light-gray);
