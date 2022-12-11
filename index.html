@@ -85,28 +85,100 @@
           <img src="images/icon-arcade.svg" alt="">
           <div>
             <h1 class="plan-title">Arcade</h1>
-            <p class="price">$9/mo</p>
+            <p class="detail">$9/mo</p>
           </div>
         </div>
         <div class="plan">
           <img src="images/icon-advanced.svg" alt="">
           <h1 class="plan-title">Advanced</h1>
-          <p class="price">$12/mo</p>
+          <p class="detail">$12/mo</p>
         </div>
         <div class="plan">
           <img src="images/icon-pro.svg" alt="">
           <h1 class="plan-title">Pro</h1>
-          <p class="price">$15/mo</p>
+          <p class="detail">$15/mo</p>
         </div>
       </div>
       <div class="plan-time-container">
-        <p class="time">Monthly</p>
+        <p class="form-secondary-subtitle">Monthly</p>
         <input type="range" name="" id="" min="0" max="1" value="0">
-        <p class="time">Yearly</p>
+        <p class="form-secondary-subtitle">Yearly</p>
       </div>
       <button class="next-step-btn">Next Step</button>
     </div>
     <!-- Step 2 end -->
+
+    <!-- Step 3 start -->
+    <div class="form inactive" id="step_3">
+      <h1 class="form-title">Pick add-ons</h1>
+      <h2 class="form-subtitle">add-ons help enhance your gaming experience</h2>
+
+      <div class="service-selector-container">
+        <div class="services">
+          <div class="services-subcontainer">
+            <input type="checkbox" name="" id="">
+            <div class="d-flex-c">
+              <p class="form-secondary-subtitle">Online service</p>
+              <p class="detail">Access to multiplayer games</p>
+            </div>
+          </div>
+          <p class="price">+$1/mo</p>
+        </div>
+        <div class="services">
+          <div class="services-subcontainer">
+            <input type="checkbox" name="" id="">
+            <div class="d-flex-c">
+              <p class="form-secondary-subtitle">Larger storage</p>
+              <p class="detail">Extra 1TB of cloud save</p>
+            </div>
+          </div>
+          <p class="price">+$2/mo</p>
+        </div>
+        <div class="services">
+          <div class="services-subcontainer">
+            <input type="checkbox" name="" id="">
+            <div class="d-flex-c">
+              <p class="form-secondary-subtitle">Customizable profile</p>
+              <p class="detail">Custom theme on your profile</p>
+            </div>
+          </div>
+          <p class="price">+$2/mo</p>
+        </div>
+      </div>
+      <button class="next-step-btn">Next Step</button>
+    </div>
+    <!-- Step 3 end -->
+
+    <!-- Step 4 start -->
+    <div class="form inactive" id="step_4">
+      <h1 class="form-title">Finishing up</h1>
+      <h2 class="form-subtitle">Double check everything looks OK before confirming</h2>
+      <div class="service-selector-container">
+        <div class="summary">
+          <div class="services-subcontainer first">
+            <div class="d-flex-c">
+              <p class="form-secondary-subtitle">Arcade(Monthly)</p>
+              <a href="#" class="detail detail-link">Change</a>
+            </div>
+            <p class="price-summary-title">$9/mo</p>
+          </div>
+          <div class="services-subcontainer">
+            <p class="detail detail-summary">Online service</p>
+            <p class="price-marine">+$1/mo</p>
+          </div>
+          <div class="services-subcontainer">
+            <p class="detail detail-summary">Larger storage</p>
+            <p class="price-marine">+$2/mo</p>
+          </div>
+        </div>
+        <div class="total">
+          <p class="detail">Total(per month)</p>
+          <p class="price-summary-title-purple">+$12/month</p>
+        </div>
+      </div>
+      <button class="next-step-btn">Next Step</button>
+    </div>
+    <!-- Step 4 end -->
   </main>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
