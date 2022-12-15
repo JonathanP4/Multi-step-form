@@ -184,8 +184,13 @@ input[type="email"] {
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border: 1px solid var(--Light-gray);
   cursor: pointer;
+  border: 1px solid var(--Light-gray);
+}
+
+.plan-active,
+.services.addon-active {
+  border: 1px solid var(--Purplish-blue);
 }
 
 .plan>img {
@@ -225,6 +230,7 @@ input[type="email"] {
   border-radius: .6rem;
   padding: 1rem;
   justify-content: space-between;
+  cursor: pointer;
 }
 
 .services-subcontainer {

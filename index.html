@@ -85,27 +85,27 @@
       <h2 class="form-subtitle mb-1">You have the option of monthly or yearly billing.</h2>
 
       <div class="plan-selector-container">
-        <div class="plan">
+        <div class="plan" id="plan_1">
           <img src="images/icon-arcade.svg" alt="">
           <div>
-            <h1 class="plan-title">Arcade</h1>
-            <p class="detail">$9/mo</p>
+            <h1 class="plan-title" id="arcade-plan">Arcade</h1>
+            <p class="detail detail-price">$9/mo</p>
           </div>
         </div>
-        <div class="plan">
+        <div class="plan" id="plan_2">
           <img src="images/icon-advanced.svg" alt="">
-          <h1 class="plan-title">Advanced</h1>
-          <p class="detail">$12/mo</p>
+          <h1 class="plan-title" id="advanced-plan">Advanced</h1>
+          <p class="detail detail-price">$12/mo</p>
         </div>
-        <div class="plan">
+        <div class="plan" id="plan_3">
           <img src="images/icon-pro.svg" alt="">
-          <h1 class="plan-title">Pro</h1>
-          <p class="detail">$15/mo</p>
+          <h1 class="plan-title" id="pro-plan">Pro</h1>
+          <p class="detail detail-price">$15/mo</p>
         </div>
       </div>
       <div class="plan-time-container">
         <p class="form-secondary-subtitle">Monthly</p>
-        <input type="range" name="" id="" min="0" max="1" value="0">
+        <input type="range" name="" id="range_input" min="0" max="1" value="0">
         <p class="form-secondary-subtitle">Yearly</p>
       </div>
       <div class="d-flex mt-2">
@@ -167,7 +167,11 @@
         <div class="summary">
           <div class="services-subcontainer first">
             <div class="d-flex-c">
-              <p class="form-secondary-subtitle">Arcade(Monthly)</p>
+              <div>
+                <span class="form-secondary-subtitle" id="selected-plan">Arcade</span>
+                <span class="form-secondary-subtitle" id="time">(Monthly)</span>
+              </div>
+              <!---->
               <a href="#" class="detail detail-link">Change</a>
             </div>
             <p class="price-summary-title">$9/mo</p>
@@ -194,5 +198,7 @@
     <!-- Step 4 end -->
   </main>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.2.min.js"
+  integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
 
 </html>
