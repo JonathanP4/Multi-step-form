@@ -85,7 +85,7 @@ input[type="email"] {
   min-height: 481.5px;
   flex-direction: column;
   gap: 2rem;
-  background-image: url('/images/bg-sidebar-desktop.svg');
+  background-image: url('images/bg-sidebar-desktop.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
