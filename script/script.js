@@ -45,11 +45,15 @@ $('.plan').click(function () {
   $('.plan').removeClass("plan-active");
   $(this).addClass("plan-active");
 
+  $('.price-summary-title').text($('.plan-active p').text());
+
   let planOfChoice = $('.plan-active h1').text();
   selectedPlan.text(`${planOfChoice}`)
 });
 const planPrices = $('.detail-price');
-const addonPrices = $('.price')
+const summaryPrices = $('.price-marine');
+const addonPrices = $('.price');
+const summaryPrice = $('.price-summary-title');
 
 $('#range_input').click(function () {
   if ($('#range_input').val() === '0') {
@@ -60,6 +64,10 @@ $('#range_input').click(function () {
     addonPrices[0].textContent = '$1/mo'
     addonPrices[1].textContent = '$2/mo'
     addonPrices[2].textContent = '$2/mo'
+
+    summaryPrices[0].textContent = '$1/mo'
+    summaryPrices[1].textContent = '$2/mo'
+    summaryPrices[2].textContent = '$2/mo'
 
     planTime = '(Monthly)'
     $('#time').text(planTime)
@@ -72,22 +80,29 @@ $('#range_input').click(function () {
     addonPrices[1].textContent = '$20/yr'
     addonPrices[2].textContent = '$20/yr'
 
+    summaryPrices[0].textContent = '$10/mo'
+    summaryPrices[1].textContent = '$20/mo'
+    summaryPrices[2].textContent = '$2/mo'
+
     planTime = '(Yearly)'
     $('#time').text(planTime)
   }
 })
 
-/*const services = document.querySelectorAll('.services')
-services.forEach(el => {
-  el.addEventListener('click', () => {
-    el.classList.toggle('addon-active')
+const services = document.querySelectorAll('.services')
+for (let el = 0; el < services.length; el++) {
+  services[el].addEventListener('click', () => {
+    services[el].classList.toggle('addon-active')
+    if (services[el].classList.contains('addon-active')) {
+      document.getElementById(`addon${el}`).classList.remove('d-none')
+    } else {
+      document.getElementById(`addon${el}`).classList.add('d-none')
+    }
   })
-})*/
-$('.services').each(function () {
-  $('.services').click(function () {
-    $(this).toggleClass('addon-active')
-  })
-})
+}
+
+
+
 
 
 

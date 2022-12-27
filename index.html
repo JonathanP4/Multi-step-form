@@ -71,7 +71,7 @@
         <p class="form-paragraph">Phone Number</p>
         <input type="tel" name="" id="" placeholder="e.g. +1 234 567 890">
       </div>
-      <div class="d-flex mt-2">
+      <div class="d-flex mt-2 buttons">
         <a href="#" class="form-subtitle back-btn">Go Back</a>
         <button class="next-step-btn" id="btn-1">Next Step</button>
       </div>
@@ -108,7 +108,7 @@
         <input type="range" name="" id="range_input" min="0" max="1" value="0">
         <p class="form-secondary-subtitle">Yearly</p>
       </div>
-      <div class="d-flex mt-2">
+      <div class="d-flex mt-2 buttons">
         <a href="#" class="form-subtitle back-btn">Go Back</a>
         <button class="next-step-btn" id="btn-2">Next Step</button>
       </div>
@@ -125,7 +125,7 @@
           <div class="services-subcontainer">
             <input type="checkbox" name="" id="">
             <div class="d-flex-c">
-              <p class="form-secondary-subtitle">Online service</p>
+              <p class="form-secondary-subtitle addon" id="01">Online service</p>
               <p class="detail">Access to multiplayer games</p>
             </div>
           </div>
@@ -135,7 +135,7 @@
           <div class="services-subcontainer">
             <input type="checkbox" name="" id="">
             <div class="d-flex-c">
-              <p class="form-secondary-subtitle">Larger storage</p>
+              <p class="form-secondary-subtitle addon" id="02">Larger storage</p>
               <p class="detail">Extra 1TB of cloud save</p>
             </div>
           </div>
@@ -145,14 +145,14 @@
           <div class="services-subcontainer">
             <input type="checkbox" name="" id="">
             <div class="d-flex-c">
-              <p class="form-secondary-subtitle">Customizable profile</p>
+              <p class="form-secondary-subtitle addon" id="03">Customizable profile</p>
               <p class="detail">Custom theme on your profile</p>
             </div>
           </div>
           <p class="price">+$2/mo</p>
         </div>
       </div>
-      <div class="d-flex mt-2">
+      <div class="d-flex mt-2  buttons">
         <a href="#" class="form-subtitle back-btn">Go Back</a>
         <button class="next-step-btn" id="btn-3">Next Step</button>
       </div>
@@ -171,17 +171,20 @@
                 <span class="form-secondary-subtitle" id="selected-plan">Arcade</span>
                 <span class="form-secondary-subtitle" id="time">(Monthly)</span>
               </div>
-              <!---->
               <a href="#" class="detail detail-link">Change</a>
             </div>
             <p class="price-summary-title">$9/mo</p>
           </div>
-          <div class="services-subcontainer">
+          <div class="services-subcontainer d-none" id="addon0">
             <p class="detail detail-summary">Online service</p>
             <p class="price-marine">+$1/mo</p>
           </div>
-          <div class="services-subcontainer">
+          <div class="services-subcontainer d-none" id="addon1">
             <p class="detail detail-summary">Larger storage</p>
+            <p class="price-marine">+$2/mo</p>
+          </div>
+          <div class="services-subcontainer d-none" id="addon2">
+            <p class="detail detail-summary">Customizable profile</p>
             <p class="price-marine">+$2/mo</p>
           </div>
         </div>
@@ -190,7 +193,7 @@
           <p class="price-summary-title-purple">+$12/month</p>
         </div>
       </div>
-      <div class="d-flex mt-1">
+      <div class="d-flex mt-1 buttons">
         <a href="#" class="form-subtitle back-btn">Go Back</a>
         <button class="confirm-btn">Confirm</button>
       </div>

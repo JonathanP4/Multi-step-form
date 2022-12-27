@@ -133,11 +133,17 @@ input[type="email"] {
   text-align: left;
   margin-top: 2rem;
   height: 65vh;
+  min-height: 450px;
+  position: relative;
 }
 
 .form.inactive {
   display: none;
   opacity: 0%;
+}
+
+.d-none {
+  display: none !important;
 }
 
 .form-title,
@@ -326,6 +332,15 @@ input[type="checkbox"] {
   width: 18px;
 }
 
+.buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.back-btn {
+  margin-right: 23vw;
+}
 
 
 /*input[type="checkbox"]:checked {
