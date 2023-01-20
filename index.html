@@ -14,192 +14,157 @@
 </head>
 
 <body>
-  <main class="form-container">
-    <!-- Sidebar start -->
-    <div class="steps-menu">
-      <div class="sidebar-items">
-        <a class="step-number active" href="#" id="1">1</a>
-        <div class="steps-info">
-          <h1 class="step-title">Step 1</h1>
-          <h2 class="step-description">Your info</h2>
+  <div class="container container--master">
+    <main class="container container--main">
+      <div class="col row row--steps">
+        <div class="steps__container">
+          <div class="step step__0 step--active">1</div>
+          <div class="step step__1">2</div>
+          <div class="step step__2">3</div>
+          <div class="step step__3">4</div>
         </div>
       </div>
-      <div class="sidebar-items">
-        <a class="step-number" href="#" id="2">2</a>
-        <div class="steps-info">
-          <h1 class="step-title">Step 2</h1>
-          <h2 class="step-description">Select plan</h2>
-        </div>
-
-      </div>
-      <div class="sidebar-items">
-        <a class="step-number" href="#" id="3">3</a>
-        <div class="steps-info">
-          <h1 class="step-title">Step 3</h1>
-          <h2 class="step-description">Add-ons</h2>
-        </div>
-
-      </div>
-      <div class="sidebar-items">
-        <a class="step-number" href="#" id="4">4</a>
-        <div class="steps-info">
-          <h1 class="step-title">Step 4</h1>
-          <h2 class="step-description">Summary</h2>
-        </div>
-      </div>
-    </div>
-    <!-- Sidebar end -->
-
-    <!-- Step 1 start -->
-    <div class="form" id="step_1">
-      <div>
-        <h1 class="form-title">Personal info</h1>
-        <h2 class="form-subtitle mb-1">Please provide your name, email address, and phone number.</h2>
-      </div>
-
-      <div>
-        <p class="form-paragraph">Name</p>
-        <input type="text" name="" id="" placeholder="e.g. Stephen King">
-      </div>
-
-      <div>
-        <p class="form-paragraph">Email Address</p>
-        <input type="email" name="" id="" placeholder="e.g. stephenking@lorem.com">
-      </div>
-
-      <div>
-        <p class="form-paragraph">Phone Number</p>
-        <input type="tel" name="" id="" placeholder="e.g. +1 234 567 890">
-      </div>
-      <div class="d-flex mt-2 buttons">
-        <a href="#" class="form-subtitle back-btn">Go Back</a>
-        <button class="next-step-btn" id="btn-1">Next Step</button>
-      </div>
-
-    </div>
-    <!-- Step 1 end -->
-
-    <!-- Step 2 start -->
-    <div class="form inactive" id="step_2">
-      <h1 class="form-title">Select your plan</h1>
-      <h2 class="form-subtitle mb-1">You have the option of monthly or yearly billing.</h2>
-
-      <div class="plan-selector-container">
-        <div class="plan" id="plan_1">
-          <img src="images/icon-arcade.svg" alt="">
+      <!-- Step 1 -->
+      <div class="menu menu-0 menu--visible">
+        <h1 class="title">Personal info</h1>
+        <p class="subtitle">
+          Please provide your name, email address, and phone number.
+        </p>
+        <form class="form" action="">
           <div>
-            <h1 class="plan-title" id="arcade-plan">Arcade</h1>
-            <p class="detail detail-price">$9/mo</p>
+            <div class="label-container">
+              <label for="name" class="input-label">Name</label>
+              <span class="input-label label--warning" id="name_Warning"></span>
+            </div>
+            <input type="text" class="data-input" id="name" autocomplete="name" required
+              placeholder="e.g. Stephen King">
+          </div>
+          <div>
+            <div class="label-container">
+              <label for="email" class="input-label">Email Adress</label>
+              <span class="input-label label--warning" id="email_Warning"></span>
+            </div>
+            <input type="email" class="data-input" name="" id="email" autocomplete="email" required
+              placeholder="e.g. stephenking@lorem.com">
+          </div>
+          <div>
+            <div class="label-container">
+              <label for="phone" class="input-label">Phone Number</label>
+              <span class="input-label label--warning" id="phone_Warning"></span>
+            </div>
+            <input type="tel" class="data-input" name="" id="phone" autocomplete="tel" required
+              placeholder="e.g. +1 234 567 890">
+          </div>
+        </form>
+      </div>
+      <!-- Step 2 -->
+      <div class="menu menu-1">
+        <h1 class="title">Select your plan</h1>
+        <p class="subtitle">
+          You have the option of monthly or yearly billing.
+        </p>
+        <div class="form plan-select--form" action="">
+          <div class="plan plan_0">
+            <img src="images/icon-arcade.svg" alt="">
+            <div>
+              <h1 class="plan-title">Arcade</h1>
+              <p class="plan--price">$9/mo</p>
+              <p class="plan-promo"></p>
+            </div>
+          </div>
+          <div class="plan plan_1">
+            <img src="images/icon-advanced.svg" alt="">
+            <div>
+              <h1 class="plan-title">Advanced</h1>
+              <p class="plan--price">$12/mo</p>
+              <p class="plan-promo"></p>
+            </div>
+          </div>
+          <div class="plan plan_2">
+            <img src="images/icon-pro.svg" alt="">
+            <div>
+              <h1 class="plan-title">Pro</h1>
+              <p class="plan--price">$15/mo</p>
+              <p class="plan-promo"></p>
+            </div>
+          </div>
+          <div class="plan__time">
+            <span class="plan__time-text" id="monthly">Monthly</span>
+            <input type="range" name="" id="time__Select" min="0" max="1">
+            <span class="plan__time-text time-text--inactive" id="yearly">Yearly</span>
           </div>
         </div>
-        <div class="plan" id="plan_2">
-          <img src="images/icon-advanced.svg" alt="">
-          <h1 class="plan-title" id="advanced-plan">Advanced</h1>
-          <p class="detail detail-price">$12/mo</p>
-        </div>
-        <div class="plan" id="plan_3">
-          <img src="images/icon-pro.svg" alt="">
-          <h1 class="plan-title" id="pro-plan">Pro</h1>
-          <p class="detail detail-price">$15/mo</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="menu menu-2">
+        <h1 class="title">Pick add-ons</h1>
+        <p class="subtitle">
+          Add-ons help enhance your gaming experience.
+        </p>
+        <div class="form plan-select--form" action="">
+          <div class="plan">
+            <input type="checkbox">
+            <div>
+              <h1 class="plan-title">Online service</h1>
+              <p class="addon-intro">Access to multiplayer games</p>
+            </div>
+            <p class="addon-price">+$1/mo</p>
+          </div>
+          <div class="plan">
+            <input type="checkbox">
+            <div>
+              <h1 class="plan-title">Larger storage</h1>
+              <p class="addon-intro">Extra 1TB of cloud save</p>
+            </div>
+            <p class="addon-price">+$2/mo</p>
+          </div>
+          <div class="plan">
+            <input type="checkbox">
+            <div>
+              <h1 class="plan-title">Customizable Profile</h1>
+              <p class="addon-intro">Custom theme on your profile</p>
+            </div>
+            <p class="addon-price">+$2/mo</p>
+          </div>
         </div>
       </div>
-      <div class="plan-time-container">
-        <p class="form-secondary-subtitle">Monthly</p>
-        <input type="range" name="" id="range_input" min="0" max="1" value="0">
-        <p class="form-secondary-subtitle">Yearly</p>
+      <!-- Step 4 -->
+      <div class="menu menu-3">
+        <h1 class="title">Finishing up</h1>
+        <p class="subtitle">
+          Double-check everything looks OK before confirming.
+        </p>
+        <div class="form finish-up--form" action="">
+          <div class="finish-up--plan">
+            <div>
+              <h1 class="plan-title addon--title">Arcade (Monthly)</h1>
+              <a href="#" class="addon-intro finish--intro">Change</a>
+            </div>
+            <p class="finish-up-price--title">+$9/mo</p>
+          </div>
+          <div class="bd-top"></div>
+          <div class="finish-up--plan addon--plan">
+            <div>
+              <p href="#" class="addon-intro finish--intro">Online service</p>
+            </div>
+            <p class="finish-up-price">+$1/mo</p>
+          </div>
+          <div class="finish-up--plan addon--plan">
+            <div>
+              <p href="#" class="addon-intro finish--intro">Larger storage</p>
+            </div>
+            <p class="finish-up-price">+$2/mo</p>
+          </div>
+        </div>
       </div>
-      <div class="d-flex mt-2 buttons">
-        <a href="#" class="form-subtitle back-btn">Go Back</a>
-        <button class="next-step-btn" id="btn-2">Next Step</button>
+    </main>
+    <div class="footer">
+      <div class="select__step">
+        <button type="button" class="btn--previous">Go back</button>
+        <button type="button" class="btn--next">Next Step</button>
       </div>
     </div>
-    <!-- Step 2 end -->
-
-    <!-- Step 3 start -->
-    <div class="form inactive" id="step_3">
-      <h1 class="form-title">Pick add-ons</h1>
-      <h2 class="form-subtitle mb-1">add-ons help enhance your gaming experience</h2>
-
-      <div class="service-selector-container">
-        <div class="services">
-          <div class="services-subcontainer">
-            <input type="checkbox" name="" id="">
-            <div class="d-flex-c">
-              <p class="form-secondary-subtitle addon" id="01">Online service</p>
-              <p class="detail">Access to multiplayer games</p>
-            </div>
-          </div>
-          <p class="price">+$1/mo</p>
-        </div>
-        <div class="services">
-          <div class="services-subcontainer">
-            <input type="checkbox" name="" id="">
-            <div class="d-flex-c">
-              <p class="form-secondary-subtitle addon" id="02">Larger storage</p>
-              <p class="detail">Extra 1TB of cloud save</p>
-            </div>
-          </div>
-          <p class="price">+$2/mo</p>
-        </div>
-        <div class="services last">
-          <div class="services-subcontainer">
-            <input type="checkbox" name="" id="">
-            <div class="d-flex-c">
-              <p class="form-secondary-subtitle addon" id="03">Customizable profile</p>
-              <p class="detail">Custom theme on your profile</p>
-            </div>
-          </div>
-          <p class="price">+$2/mo</p>
-        </div>
-      </div>
-      <div class="d-flex mt-2  buttons">
-        <a href="#" class="form-subtitle back-btn">Go Back</a>
-        <button class="next-step-btn" id="btn-3">Next Step</button>
-      </div>
-    </div>
-    <!-- Step 3 end -->
-
-    <!-- Step 4 start -->
-    <div class="form inactive" id="step_4">
-      <h1 class="form-title">Finishing up</h1>
-      <h2 class="form-subtitle mb-1">Double check everything looks OK before confirming</h2>
-      <div class="service-selector-container">
-        <div class="summary">
-          <div class="services-subcontainer first">
-            <div class="d-flex-c">
-              <div>
-                <span class="form-secondary-subtitle" id="selected-plan">Arcade</span>
-                <span class="form-secondary-subtitle" id="time">(Monthly)</span>
-              </div>
-              <a href="#" class="detail detail-link">Change</a>
-            </div>
-            <p class="price-summary-title">$9/mo</p>
-          </div>
-          <div class="services-subcontainer d-none" id="addon0">
-            <p class="detail detail-summary">Online service</p>
-            <p class="price-marine">+$1/mo</p>
-          </div>
-          <div class="services-subcontainer d-none" id="addon1">
-            <p class="detail detail-summary">Larger storage</p>
-            <p class="price-marine">+$2/mo</p>
-          </div>
-          <div class="services-subcontainer d-none" id="addon2">
-            <p class="detail detail-summary">Customizable profile</p>
-            <p class="price-marine">+$2/mo</p>
-          </div>
-        </div>
-        <div class="total">
-          <p class="detail">Total(per month)</p>
-          <p class="price-summary-title-purple">+$12/month</p>
-        </div>
-      </div>
-      <div class="d-flex mt-1 buttons">
-        <a href="#" class="form-subtitle back-btn">Go Back</a>
-        <button class="confirm-btn">Confirm</button>
-      </div>
-    </div>
-    <!-- Step 4 end -->
-  </main>
+  </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.2.min.js"
   integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
