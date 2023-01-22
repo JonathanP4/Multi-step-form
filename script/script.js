@@ -2,6 +2,7 @@
 const nextStepBtn = document.querySelector('.btn--next')
 const prevStepBtn = document.querySelector('.btn--previous')
 
+const dataInput = document.querySelectorAll('.data-input')
 const nameInputField = document.getElementById('name')
 const emailInputField = document.getElementById('email')
 const phoneInputField = document.getElementById('phone')
@@ -11,115 +12,199 @@ const planPrice = document.querySelectorAll('.plan--price')
 const planTime = document.getElementById('time__Select')
 const planPromo = document.querySelectorAll('.plan-promo')
 
+const addon = document.querySelectorAll('.addon')
 const selectTime = document.getElementById('time__Select')
-const addonTitle = document.querySelector('.addon--title')
 const addonTime = document.getElementById('plan_Time')
 const addonPrice = document.querySelectorAll('.addon-price')
+
+const warningText = document.querySelectorAll('.label--warning')
+const check = document.querySelectorAll('.bi-check-square-fill')
+
+const finishForm = document.querySelector('.finish-up--form')
+const finishUpTitle = document.querySelector('.finish-up--title')
+const finishUpPrice = document.querySelector('.finish-up-price--title')
 
 
 let x = 0
 selectTime.value = 0
 
-prevStepBtn.style.display = "none"
+const planPrices = [9, 12, 15];
+const addonPrices = [1, 2, 2];
 
-function stepToggle(val) {
-   val === true ? x++ : x--;
-   {
-      document.querySelector(`.menu-${val == true ? x - 1 : x + 1}`)
-         .classList
-         .remove('menu--visible');
-      document.querySelector(`.menu-${x}`)
-         .classList
-         .add('menu--visible');
-   }
+const yearlyPlanPrices = planPrices.map(el => el * 10)
+const yearlyAddonPrices = addonPrices.map(el => el * 10)
 
-   {
-      document.querySelector(`.step__${val == true ? x - 1 : x + 1}`)
-         .classList
-         .remove('step--active');
-      document.querySelector(`.step__${x}`)
-         .classList
-         .add('step--active');
-   }
-   prevStepBtn.style.display = `${x !== 0 ? "block" : "none"}`
+const selectedItems = {
+   plan: 'Arcade',
+   time: 'Monthly',
+   timeLabel: 'mo',
+   planPrices: planPrices,
+   addonPrices: addonPrices,
 }
 
-function checkData(input, regex) {
-   input.forEach((name, i) => {
-      const element = document.getElementById(`${name}`)
-      if (!regex[i].test(element.value)) {
-         element
-            .classList
-            .add('warning-state');
+const changeVisible = val => {
+   $(`.menu-${val}`).addClass('menu--visible')
+   $(`.menu-${val}`).siblings().removeClass('menu--visible')
 
-         document.getElementById(`${name}_Warning`)
-            .textContent = `${element.value === '' ?
-               'This field is required' : `Invalid ${name}`}`;
+   $(`.step__${val}`).addClass('step--active')
+   $(`.step__${val}`).siblings().removeClass('step--active')
+}
+
+const addWarning = arr => {
+   arr.forEach((el, i) => {
+      if (el === false) {
+         dataInput[i].classList.add('warning-state')
+         warningText[i].textContent =
+            `${dataInput[i].value === '' ? 'This field is required' : 'Invalid format'}`
       } else {
-         document.getElementById(`${name}`)
-            .classList
-            .remove('warning-state');
-         document.getElementById(`${name}_Warning`)
-            .textContent = '';
+         dataInput[i].classList.remove('warning-state')
+         warningText[i].textContent = ''
       }
    })
-   document.querySelectorAll('.warning-state').length === 3 && stepToggle(true)
+   return document.querySelectorAll('.warning-state').length
+}
+
+const checkData = () => {
+   const nameRegex = new RegExp(/[a-z]+\s[a-z]+/gi)
+   const emailRegex = new RegExp(/\w+@\w{2,}.com/gi)
+   const phoneRegex = new RegExp(/\+\d{1,3}\s\d{3}\s\d{3}\s\d{3}/)
+
+   const results = [
+      nameRegex.test(nameInputField.value),
+      emailRegex.test(emailInputField.value),
+      phoneRegex.test(phoneInputField.value),
+   ]
+   if (addWarning(results) === 3) {
+      x <= 3 ? x++ : void 0
+      changeVisible(x)
+   }
+   console.log(x);
+}
+
+const checkPlan = (el) => {
+   const mapObj = { 0: 'Arcade', 1: 'Advanced', 2: 'Pro' }
+   const nodeArr = Array.from(plan)
+   const i = nodeArr.indexOf(el)
+
+   selectedItems.plan = mapObj[nodeArr.indexOf(el)]
+   addonPrice.textContent = `${selectedItems.planPrices[i]}`
+
+   finishUpTitle.textContent = `${selectedItems.plan}(${selectedItems.time})`
+   finishUpPrice.textContent = `$${selectedItems.planPrices[i]}/${selectedItems.timeLabel}`
+}
+
+const toggleActiveText = n => {
+   if (n === 1) {
+      yearly.classList.remove('time-text--inactive')
+      monthly.classList.add('time-text--inactive')
+   } else {
+      yearly.classList.add('time-text--inactive')
+      monthly.classList.remove('time-text--inactive')
+   }
+}
+
+const updateText = () => {
+   const timeLabel = selectedItems.timeLabel;
+   planPrice.forEach((el, i) => {
+      el.textContent =
+         `$${selectedItems.planPrices[i]}/${timeLabel}`;
+
+      addonPrice[i].textContent =
+         `$${selectedItems.addonPrices[i]}/${timeLabel}`;
+   })
+}
+
+const updateElements = n => {
+   if (n === 1) {
+      selectedItems.planPrices = yearlyPlanPrices
+      selectedItems.addonPrices = yearlyAddonPrices
+
+      selectedItems.time = 'Yearly'
+      selectedItems.timeLabel = 'yr'
+   } else {
+      selectedItems.planPrices = planPrices
+      selectedItems.addonPrices = addonPrices
+
+      selectedItems.time = 'Monthly'
+      selectedItems.timeLabel = 'mo'
+   }
+   updateText()
+}
+
+const addElement = (i, el) => {
+   const time = +selectTime.value
+   const title = document.querySelectorAll('.addon--title')
+   const price = document.querySelectorAll('.addon-price')
+
+   console.log(title[i]);
+
+   if (el.classList.contains('addon--selected')) {
+      finishForm.insertAdjacentHTML('beforeend',
+         `<div class="finish-up--plan addon--plan">
+      <div>
+        <p href="#" class="addon-intro finish--intro">${title[i].textContent}</p>
+      </div>
+      <p class="finish-up-price">
+         ${price[i].textContent}
+      </p>
+    </div>`)
+   } else {
+      const currentAddon = document.querySelectorAll('.addon--plan')
+      currentAddon[i].remove()
+   }
+}
+
+const changeFinishPrices = n => {
+   const price = document.querySelectorAll('.addon--plan .finish-up-price')
+
+   price.forEach(el => {
+      const thisPrice = el.textContent.match(/\d+/g)
+      el.textContent = n === 1 ? `$${+thisPrice * 10}/yr` : `$${+thisPrice / 10}/mo`
+   })
 }
 
 nextStepBtn.addEventListener('click', () => {
-   if (x === 0) {
-      checkData(['name', 'email', 'phone'],
-         [
-            /[a-z]+\s[a-z]+/gi,
-            /\w+@\w{2,}.com/gi,
-            /\+\d{1,3}\s\d{3}\s\d{3}\s\d{3}/
-         ])
-   } else {
-      stepToggle(true)
+   if (x === 0) checkData()
+   else {
+      x <= 3 ? x++ : void 0
+      console.log(x)
+      changeVisible(x)
    }
 })
 
 prevStepBtn.addEventListener('click', () => {
-   stepToggle(false)
+   x >= 0 ? x-- : 0
+   changeVisible(x)
 })
-
-function changePrices(val) {
-   const planPrices = [9, 12, 15]
-   const addonPrices = [1, 2, 2]
-   if (val === 1) {
-      planPrice.forEach((el, i) => {
-         el.textContent = `$${planPrices[i] * 10}/yr`
-         addonPrice[i].textContent = `$${addonPrices[i] * 10}/yr`
-         planPromo[i].textContent = '2 months free'
-      })
-   } else {
-      planPrice.forEach((el, i) => {
-         el.textContent = `$${planPrices[i]}/mo`
-         addonPrice[i].textContent = `$${addonPrices[i]}/mo`
-         planPromo[i].textContent = ''
-      })
-   }
-}
 
 selectTime.addEventListener('click', () => {
-   const time = +selectTime.value
-   changePrices(time)
-   planText()
-})
+   const val = +selectTime.value
+   const plan = document.querySelector('.plan--selected')
 
-function planText() {
-   const selectedPlan = document.querySelector('.plan--selected h1')
-   addonTitle.textContent =
-      `${selectedPlan?.textContent} ${+selectTime.value === 1 ? '(Yearly)' : '(Monthly)'}`;
-}
+   console.log(finishForm.innerHTML);
+
+   toggleActiveText(val)
+   updateElements(val)
+   checkPlan(plan)
+
+   if (finishForm.innerHTML.match('addon--plan')) {
+      changeFinishPrices(val)
+   }
+})
 
 $('.plan').click(function () {
    $(this).addClass('plan--selected')
    $(this).siblings().removeClass('plan--selected')
 
-   planText()
+   const plan = document.querySelector('.plan--selected')
+   checkPlan(plan)
 })
 
+addon.forEach((el, i) => {
+   el.addEventListener('click', () => {
+      el.classList.toggle('addon--selected')
+      check[i].classList.toggle('bi--visible')
 
-
-
+      addElement(i, el)
+   })
+})

@@ -97,20 +97,25 @@ img {
   color: var(--Cool-gray);
 }
 
-.addon--title {
+.finish-up--title {
   font-weight: 500;
 }
 
 .addon-intro {
   color: var(--Cool-gray);
   font-size: .9rem;
-  white-space: nowrap;
 }
 
 .addon-price {
   color: var(--Purplish-blue);
   font-size: .9rem;
   margin-left: auto;
+}
+
+.addon--selected,
+.plan--selected {
+  border: 1px solid var(--Purplish-blue) !important;
+  background-color: hsla(243, 100%, 62%, 0.041);
 }
 
 .finish-up-price--title {
@@ -127,9 +132,11 @@ img {
   margin-left: auto;
 }
 
-.finish--intro {
+.finish--intro,
+.change {
   font-size: 1rem;
 }
+
 
 /*===========================*/
 .btn--next {
@@ -228,7 +235,7 @@ img {
   gap: .7rem;
 }
 
-.plan {
+.plan--style {
   cursor: pointer;
   border: 1px solid var(--Cool-gray);
   display: flex;
@@ -236,10 +243,6 @@ img {
   gap: .8rem;
   border-radius: .6rem;
   padding: .8rem;
-}
-
-.plan--selected {
-  border: 2px solid var(--Purplish-blue);
 }
 
 .finish-up--form {
@@ -280,6 +283,32 @@ img {
   align-items: center;
   justify-content: center;
   background-color: var(--Magnolia);
+}
+
+.checkbox-container {
+  position: relative;
+  width: 17px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid var(--Cool-gray);
+}
+
+.bi-check-square-fill {
+  color: var(--Purplish-blue);
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.bi--visible {
+  display: inline-block;
+}
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  vertical-align: 0;
+  margin-right: -5px;
 }
 
 /*======Custom Inputs======*/

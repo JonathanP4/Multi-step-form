@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
   <script src="script/script.js" defer></script>
   <link rel="stylesheet" href="style/style.css">
   <title>Document</title>
@@ -64,7 +65,7 @@
           You have the option of monthly or yearly billing.
         </p>
         <div class="form plan-select--form" action="">
-          <div class="plan plan_0">
+          <div class="plan plan--style plan_0 plan--selected">
             <img src="images/icon-arcade.svg" alt="">
             <div>
               <h1 class="plan-title">Arcade</h1>
@@ -72,7 +73,7 @@
               <p class="plan-promo"></p>
             </div>
           </div>
-          <div class="plan plan_1">
+          <div class="plan plan--style plan_1">
             <img src="images/icon-advanced.svg" alt="">
             <div>
               <h1 class="plan-title">Advanced</h1>
@@ -80,7 +81,7 @@
               <p class="plan-promo"></p>
             </div>
           </div>
-          <div class="plan plan_2">
+          <div class="plan plan--style plan_2">
             <img src="images/icon-pro.svg" alt="">
             <div>
               <h1 class="plan-title">Pro</h1>
@@ -96,32 +97,38 @@
         </div>
       </div>
       <!-- Step 3 -->
-      <div class="menu menu-2">
+      <div class="menu menu-2 ">
         <h1 class="title">Pick add-ons</h1>
         <p class="subtitle">
           Add-ons help enhance your gaming experience.
         </p>
         <div class="form plan-select--form" action="">
-          <div class="plan">
-            <input type="checkbox">
+          <div class="plan--style addon">
+            <div class="checkbox-container">
+              <i class="bi bi-check-square-fill"></i>
+            </div>
             <div>
-              <h1 class="plan-title">Online service</h1>
+              <h1 class="plan-title addon--title">Online service</h1>
               <p class="addon-intro">Access to multiplayer games</p>
             </div>
             <p class="addon-price">+$1/mo</p>
           </div>
-          <div class="plan">
-            <input type="checkbox">
+          <div class="plan--style addon">
+            <div class="checkbox-container">
+              <i class="bi bi-check-square-fill"></i>
+            </div>
             <div>
-              <h1 class="plan-title">Larger storage</h1>
+              <h1 class="plan-title addon--title">Larger storage</h1>
               <p class="addon-intro">Extra 1TB of cloud save</p>
             </div>
             <p class="addon-price">+$2/mo</p>
           </div>
-          <div class="plan">
-            <input type="checkbox">
+          <div class="plan--style addon ">
+            <div class="checkbox-container">
+              <i class="bi bi-check-square-fill"></i>
+            </div>
             <div>
-              <h1 class="plan-title">Customizable Profile</h1>
+              <h1 class="plan-title addon--title">Customizable Profile</h1>
               <p class="addon-intro">Custom theme on your profile</p>
             </div>
             <p class="addon-price">+$2/mo</p>
@@ -137,24 +144,12 @@
         <div class="form finish-up--form" action="">
           <div class="finish-up--plan">
             <div>
-              <h1 class="plan-title addon--title">Arcade (Monthly)</h1>
-              <a href="#" class="addon-intro finish--intro">Change</a>
+              <h1 class="plan-title finish-up--title">Arcade (Monthly)</h1>
+              <a href="#" class="addon-intro change">Change</a>
             </div>
-            <p class="finish-up-price--title">+$9/mo</p>
+            <p class="finish-up-price--title">$9/mo</p>
           </div>
           <div class="bd-top"></div>
-          <div class="finish-up--plan addon--plan">
-            <div>
-              <p href="#" class="addon-intro finish--intro">Online service</p>
-            </div>
-            <p class="finish-up-price">+$1/mo</p>
-          </div>
-          <div class="finish-up--plan addon--plan">
-            <div>
-              <p href="#" class="addon-intro finish--intro">Larger storage</p>
-            </div>
-            <p class="finish-up-price">+$2/mo</p>
-          </div>
         </div>
       </div>
     </main>
