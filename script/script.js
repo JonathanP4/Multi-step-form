@@ -284,3 +284,7 @@ addon.forEach((el, i) => {
       totalUpdater()
    })
 })
+
+document.body.addEventListener('load', () => {
+   document.body.style.height = `${window.innerHeight}px`
+})
