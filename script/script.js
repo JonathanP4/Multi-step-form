@@ -260,6 +260,20 @@ selectTime.addEventListener('click', () => {
    }
 })
 
+selectTime.addEventListener('touchmove', () => {
+   const val = +selectTime.value
+   const plan = document.querySelector('.plan--selected')
+
+   toggleActiveText(val)
+   updateElements(val)
+   checkPlan(plan)
+   totalUpdater()
+
+   if (finishForm.innerHTML.match('addon--plan')) {
+      changeFinishPrices(val)
+   }
+})
+
 change.addEventListener('click', () => {
    x = 1
    changeVisible(x)
