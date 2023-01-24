@@ -24,6 +24,10 @@ const finishForm = document.querySelector('.finish-up--form')
 const finishUpTitle = document.querySelector('.finish-up--title')
 const finishUpPrice = document.querySelector('.finish-up-price--title')
 
+const change = document.querySelector('.change')
+
+const footer = document.querySelector('.footer')
+
 
 let x = 0
 selectTime.value = 0
@@ -46,8 +50,14 @@ const changeVisible = val => {
    $(`.menu-${val}`).addClass('menu--visible')
    $(`.menu-${val}`).siblings().removeClass('menu--visible')
 
+   // $(`.step__${val}`).addClass('step--active')
+   // $(`.step__${val}`).siblings().removeClass('step--active')
+
+   $('.step').each(function () {
+      $(this).removeClass('step--active')
+   })
+
    $(`.step__${val}`).addClass('step--active')
-   $(`.step__${val}`).siblings().removeClass('step--active')
 }
 
 const addWarning = arr => {
@@ -74,7 +84,7 @@ const checkData = () => {
       emailRegex.test(emailInputField.value),
       phoneRegex.test(phoneInputField.value),
    ]
-   if (addWarning(results) === 3) {
+   if (addWarning(results) === 0) {
       x <= 3 ? x++ : void 0
       changeVisible(x)
    }
@@ -163,21 +173,48 @@ const changeFinishPrices = n => {
    })
 }
 
+const toggleVisibility = x => {
+   x === 0 ? prevStepBtn.classList.add("btn--inactive")
+      : prevStepBtn.classList.remove("btn--inactive")
+}
+
+const changeBtn = (x) => {
+   if (x === 3) {
+      nextStepBtn.textContent = 'Confirm'
+      nextStepBtn.style.backgroundColor = 'var(--Purplish-blue)'
+   } else {
+      nextStepBtn.textContent = 'Next Step'
+      nextStepBtn.style.backgroundColor = 'var(--Marine-blue)'
+   }
+}
+
+const finished = () => {
+   footer.remove()
+   $('.step__3').addClass('step--active')
+}
+
 nextStepBtn.addEventListener('click', () => {
-   if (x === 0) checkData()
+   if (x === 0) {
+      checkData()
+   }
    else {
-      x <= 3 ? x++ : void 0
+      x <= 4 ? x++ : void 0
       console.log(x)
       changeVisible(x)
    }
+   if (x === 4) finished()
+   changeBtn(x)
+   toggleVisibility(x)
 })
 
 prevStepBtn.addEventListener('click', () => {
    x >= 0 ? x-- : 0
    changeVisible(x)
+   changeBtn(x)
+   toggleVisibility(x)
 })
 
-selectTime.addEventListener('click', () => {
+selectTime.addEventListener('mouseup', () => {
    const val = +selectTime.value
    const plan = document.querySelector('.plan--selected')
 
@@ -190,6 +227,12 @@ selectTime.addEventListener('click', () => {
    if (finishForm.innerHTML.match('addon--plan')) {
       changeFinishPrices(val)
    }
+})
+
+change.addEventListener('click', () => {
+   x = 1
+   changeVisible(x)
+   changeBtn(x)
 })
 
 $('.plan').click(function () {

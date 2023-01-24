@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-  <script src="script/script.js" defer></script>
   <link rel="stylesheet" href="style/style.css">
   <title>Document</title>
 </head>
@@ -19,10 +18,34 @@
     <main class="container container--main">
       <div class="col row row--steps">
         <div class="steps__container">
-          <div class="step step__0 step--active">1</div>
-          <div class="step step__1">2</div>
-          <div class="step step__2">3</div>
-          <div class="step step__3">4</div>
+          <div class="step__container">
+            <div class="step step__0 step--active">1</div>
+            <div class="label--steps">
+              <p class="step--subtilte">Step 1</p>
+              <h1 class="step-title">Your info</h1>
+            </div>
+          </div>
+          <div class="step__container">
+            <div class="step step__1">2</div>
+            <div class="label--steps">
+              <p class="step--subtilte">Step 2</p>
+              <h1 class="step-title">Select plan</h1>
+            </div>
+          </div>
+          <div class="step__container">
+            <div class="step step__2">3</div>
+            <div class="label--steps">
+              <p class="step--subtilte">Step 3</p>
+              <h1 class="step-title">Add-ons</h1>
+            </div>
+          </div>
+          <div class="step__container">
+            <div class="step step__3">4</div>
+            <div class="label--steps">
+              <p class="step--subtilte">Step 4</p>
+              <h1 class="step-title">Summary</h1>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Step 1 -->
@@ -66,7 +89,7 @@
         </p>
         <div class="form plan-select--form" action="">
           <div class="plan plan--style plan_0 plan--selected">
-            <img src="images/icon-arcade.svg" alt="">
+            <img class="plan--img" src="images/icon-arcade.svg" alt="">
             <div>
               <h1 class="plan-title">Arcade</h1>
               <p class="plan--price">$9/mo</p>
@@ -74,7 +97,7 @@
             </div>
           </div>
           <div class="plan plan--style plan_1">
-            <img src="images/icon-advanced.svg" alt="">
+            <img class="plan--img" src="images/icon-advanced.svg" alt="">
             <div>
               <h1 class="plan-title">Advanced</h1>
               <p class="plan--price">$12/mo</p>
@@ -82,7 +105,7 @@
             </div>
           </div>
           <div class="plan plan--style plan_2">
-            <img src="images/icon-pro.svg" alt="">
+            <img class="plan--img" src="images/icon-pro.svg" alt="">
             <div>
               <h1 class="plan-title">Pro</h1>
               <p class="plan--price">$15/mo</p>
@@ -102,7 +125,7 @@
         <p class="subtitle">
           Add-ons help enhance your gaming experience.
         </p>
-        <div class="form plan-select--form" action="">
+        <div class="form plan-select--form addon--form" action="">
           <div class="plan--style addon">
             <div class="checkbox-container">
               <i class="bi bi-check-square-fill"></i>
@@ -152,10 +175,23 @@
           <div class="bd-top"></div>
         </div>
       </div>
+      <!--Finished-->
+      <div class="menu menu-4">
+        <div class="finished">
+          <img src="images/icon-thank-you.svg" alt="">
+          <div>
+            <h1 class="title">Thank you!</h1>
+            <p class="subtitle">
+              Thanks for confirming your subscription! We hope you have fun
+              using our platform. If you ever need support, please feel free
+              to email us at support@loremgaming.com.</p>
+          </div>
+        </div>
+      </div>
     </main>
     <div class="footer">
       <div class="select__step">
-        <button type="button" class="btn--previous">Go back</button>
+        <button type="button" class="btn--previous btn--inactive">Go back</button>
         <button type="button" class="btn--next">Next Step</button>
       </div>
     </div>
@@ -163,5 +199,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.2.min.js"
   integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+<script src="script/script.js"></script>
 
 </html>
