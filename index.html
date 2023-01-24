@@ -16,7 +16,7 @@
 
 <body>
   <div class="container container--master">
-    <main role="main" class="container container--main">
+    <main class="container container--main">
       <div class="col row row--steps">
         <div class="steps__container">
           <div class="step__container">
@@ -55,7 +55,7 @@
         <p class="subtitle">
           Please provide your name, email address, and phone number.
         </p>
-        <form role="form" class="form" action="">
+        <form class="form">
           <div>
             <div class="label-container">
               <label for="name" class="input-label">Name</label>
@@ -69,7 +69,7 @@
               <label for="email" class="input-label">Email Adress</label>
               <span class="input-label label--warning" id="email_Warning"></span>
             </div>
-            <input type="email" class="data-input" name="" id="email" autocomplete="email" required
+            <input type="email" class="data-input" id="email" autocomplete="email" required
               placeholder="e.g. stephenking@lorem.com">
           </div>
           <div>
@@ -77,7 +77,7 @@
               <label for="phone" class="input-label">Phone Number</label>
               <span class="input-label label--warning" id="phone_Warning"></span>
             </div>
-            <input type="tel" class="data-input" name="" id="phone" autocomplete="tel" required
+            <input type="tel" class="data-input" id="phone" autocomplete="tel" required
               placeholder="e.g. +1 234 567 890">
           </div>
         </form>
@@ -88,7 +88,7 @@
         <p class="subtitle">
           You have the option of monthly or yearly billing.
         </p>
-        <div class="form plan-select--form" action="">
+        <div class="form plan-select--form">
           <div class="plan plan--style plan_0 plan--selected">
             <img class="plan--img" src="images/icon-arcade.svg" alt="">
             <div>
@@ -115,7 +115,7 @@
           </div>
           <div class="plan__time">
             <span class="plan__time-text" id="monthly">Monthly</span>
-            <input type="range" name="" id="time__Select" min="0" max="1">
+            <input type="range" id="time__Select" min="0" max="1">
             <span class="plan__time-text time-text--inactive" id="yearly">Yearly</span>
           </div>
         </div>
@@ -126,7 +126,7 @@
         <p class="subtitle">
           Add-ons help enhance your gaming experience.
         </p>
-        <div class="form plan-select--form addon--form" action="">
+        <div class="form plan-select--form addon--form">
           <div class="plan--style addon">
             <div class="checkbox-container">
               <i class="bi bi-check-square-fill"></i>
@@ -165,7 +165,7 @@
         <p class="subtitle">
           Double-check everything looks OK before confirming.
         </p>
-        <div class="form finish-up--form" action="">
+        <div class="form finish-up--form">
           <div class="finish-up--plan">
             <div>
               <h1 class="plan-title finish-up--title">Arcade (Monthly)</h1>
@@ -195,8 +195,8 @@
       </div>
       <div class="footer">
         <div class="select__step">
-          <button role="button" type="button" class="btn--previous btn--inactive">Go back</button>
-          <button role="button" type="button" class="btn--next">Next Step</button>
+          <button type="button" class="btn--previous btn--inactive">Go back</button>
+          <button type="button" class="btn--next">Next Step</button>
         </div>
       </div>
     </main>
