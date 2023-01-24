@@ -246,7 +246,7 @@ prevStepBtn.addEventListener('click', () => {
    toggleVisibility(x)
 })
 
-selectTime.addEventListener('mouseup', () => {
+selectTime.addEventListener('click', () => {
    const val = +selectTime.value
    const plan = document.querySelector('.plan--selected')
 
