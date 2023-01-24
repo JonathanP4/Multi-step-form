@@ -193,11 +193,6 @@ img {
   align-items: center;
 }
 
-.container--master {
-  position: relative;
-  max-width: 1333px;
-}
-
 .row--steps {
   background: url("/images/bg-sidebar-mobile.svg") no-repeat;
   background-size: cover;
@@ -253,6 +248,7 @@ img {
   padding: 2.3rem 1.3rem;
   border-radius: .6rem;
   margin-top: -70px;
+  max-height: 453px;
   box-shadow: 0 0 .5rem hsla(213, 96%, 18%, 0.3);
 }
 
@@ -296,7 +292,7 @@ img {
   width: 100%;
   padding: 1rem 0;
   position: absolute;
-  bottom: -13vh;
+  bottom: 0;
 }
 
 .select__step {
@@ -386,6 +382,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 @media screen and (min-width: 824px) {
   .container--master {
+    height: 100vh;
     display: flex;
     justify-content: center;
   }
@@ -398,14 +395,12 @@ input[type="range"]::-webkit-slider-thumb {
     align-items: flex-start;
     position: relative;
     padding: 1rem;
-
     width: 70vw;
     min-width: 797.20px;
     max-width: 933.09px;
-
     height: 80vh;
+    max-height: 522.08px;
     min-height: 454.89px;
-    max-height: 522.39px;
     gap: 4rem;
   }
 
@@ -502,8 +497,9 @@ input[type="range"]::-webkit-slider-thumb {
 
   .footer {
     background-color: var(--Alabaster);
+    position: absolute;
     width: 53%;
-    bottom: 6%;
+    bottom: 10%;
     right: 10%;
     padding: 0;
     margin: 0;
