@@ -27,6 +27,7 @@
 
 body {
   height: 100vh;
+  max-height: 800px;
   min-height: 553px;
   width: 100vw;
   min-width: 375px;
@@ -197,8 +198,8 @@ img {
   justify-content: space-between;
   position: relative;
   height: 100vh;
-  /* max-height: 700px; */
-  /* min-height: 553px; */
+  max-height: 640px;
+  min-height: 553px;
   max-width: 1333px;
 }
 
@@ -207,9 +208,9 @@ img {
   background-size: cover;
   width: 100vw;
   min-width: 375px;
-  min-height: 418px;
+  max-height: 170px;
   padding: 2rem 0;
-  min-height: 27vh;
+  height: 27vh;
 }
 
 .steps__container {
