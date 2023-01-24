@@ -1,4 +1,6 @@
 /*Elements*/
+
+const containerMain = document.querySelector('.container--main')
 const nextStepBtn = document.querySelector('.btn--next')
 const prevStepBtn = document.querySelector('.btn--previous')
 
@@ -46,17 +48,9 @@ const selectedItems = {
    addonPrices: addonPrices,
 }
 
-window.addEventListener('resize', () => {
-   screen.availHeight <= 623 ? footer.style.top = '450px'
-      : footer.style.top = '520px'
-})
-
 const changeVisible = val => {
    $(`.menu-${val}`).addClass('menu--visible')
    $(`.menu-${val}`).siblings().removeClass('menu--visible')
-
-   // $(`.step__${val}`).addClass('step--active')
-   // $(`.step__${val}`).siblings().removeClass('step--active')
 
    $('.step').each(function () {
       $(this).removeClass('step--active')
