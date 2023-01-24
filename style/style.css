@@ -28,7 +28,7 @@
 body {
   height: 100vh;
   max-height: 800px;
-  min-height: 553px;
+  /* min-height: 553px; */
   width: 100vw;
   min-width: 375px;
   max-width: 1333px;
@@ -199,7 +199,6 @@ img {
   position: relative;
   height: 100vh;
   max-height: 640px;
-  min-height: 553px;
   max-width: 1333px;
 }
 
@@ -409,7 +408,7 @@ input[type="range"]::-webkit-slider-thumb {
     max-width: 933.09px;
 
     height: 80vh;
-    min-height: 454.89px;
+    /* min-height: 454.89px; */
     max-height: 522.39px;
     gap: 4rem;
   }
