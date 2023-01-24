@@ -24,8 +24,10 @@
   text-rendering: geometricPrecision;
 }
 
+
 body {
   height: 100vh;
+  min-height: 553px;
   width: 100vw;
   min-width: 375px;
   max-width: 1333px;
@@ -195,7 +197,8 @@ img {
   justify-content: space-between;
   position: relative;
   height: 100vh;
-  min-height: 553px;
+  /* max-height: 700px; */
+  /* min-height: 553px; */
   max-width: 1333px;
 }
 
