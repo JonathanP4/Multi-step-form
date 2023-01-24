@@ -27,8 +27,7 @@
 
 body {
   height: 100vh;
-  max-height: 800px;
-  /* min-height: 553px; */
+  max-height: 641px;
   width: 100vw;
   min-width: 375px;
   max-width: 1333px;
@@ -198,7 +197,7 @@ img {
   justify-content: space-between;
   position: relative;
   height: 100vh;
-  /* max-height: 640px; */
+  max-height: 641px;
   max-width: 1333px;
 }
 
