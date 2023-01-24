@@ -17,7 +17,6 @@
 *,
 *::before,
 *::after {
-  outline: 1px solid red;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -33,7 +32,6 @@ body {
   min-width: 375px;
   max-width: 1333px;
   background-color: var(--Magnolia);
-  position: relative;
 }
 
 img {
@@ -250,7 +248,6 @@ img {
   padding: 2.3rem 1.3rem;
   border-radius: .6rem;
   margin-top: -70px;
-  max-height: 453px;
   box-shadow: 0 0 .5rem hsla(213, 96%, 18%, 0.3);
 }
 
