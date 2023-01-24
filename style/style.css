@@ -26,9 +26,7 @@
 
 
 body {
-  height: 100vh;
   min-height: 553px;
-  width: 100vw;
   min-width: 375px;
   max-width: 1333px;
   background-color: var(--Magnolia);
@@ -184,6 +182,11 @@ img {
 
 .btn--inactive {
   display: none;
+}
+
+.container--master {
+  height: 100vh;
+  width: 100vw;
 }
 
 .container {
