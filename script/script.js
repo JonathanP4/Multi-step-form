@@ -88,7 +88,6 @@ const checkData = () => {
       x <= 3 ? x++ : void 0
       changeVisible(x)
    }
-   console.log(x);
 }
 
 const checkPlan = (el) => {
@@ -145,8 +144,6 @@ const addElement = (i, el) => {
    const time = +selectTime.value
    const title = document.querySelectorAll('.addon--title')
    const price = document.querySelectorAll('.addon-price')
-
-   console.log(title[i]);
 
    if (el.classList.contains('addon--selected')) {
       finishForm.insertAdjacentHTML('beforeend',
@@ -210,6 +207,22 @@ const totalUpdater = () => {
 const finished = () => {
    footer.remove()
    $('.step__3').addClass('step--active')
+
+   const arr = []
+   const addons = document.querySelectorAll('.addon--plan')
+   addons.forEach((el, i) => {
+      arr.push(el.textContent.replace(/\n|\r|\s+/g, ' '))
+   })
+
+   const obj = {
+      name: nameInputField.value,
+      phone: phoneInputField.value,
+      email: emailInputField.value,
+      plan: selectedItems.plan,
+      time: selectedItems.time,
+      addons: arr,
+   }
+   localStorage.setItem(1, JSON.stringify(obj))
 }
 
 nextStepBtn.addEventListener('click', () => {
@@ -218,7 +231,6 @@ nextStepBtn.addEventListener('click', () => {
    }
    else {
       x <= 4 ? x++ : void 0
-      console.log(x)
       changeVisible(x)
    }
    if (x === 4) finished()
@@ -237,8 +249,6 @@ prevStepBtn.addEventListener('click', () => {
 selectTime.addEventListener('mouseup', () => {
    const val = +selectTime.value
    const plan = document.querySelector('.plan--selected')
-
-   console.log(finishForm.innerHTML);
 
    toggleActiveText(val)
    updateElements(val)
