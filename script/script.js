@@ -46,6 +46,11 @@ const selectedItems = {
    addonPrices: addonPrices,
 }
 
+window.addEventListener('resize', () => {
+   screen.availHeight <= 623 ? footer.style.top = '450px'
+      : footer.style.top = '520px'
+})
+
 const changeVisible = val => {
    $(`.menu-${val}`).addClass('menu--visible')
    $(`.menu-${val}`).siblings().removeClass('menu--visible')

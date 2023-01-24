@@ -26,6 +26,8 @@
 body {
   height: 100vh;
   width: 100vw;
+  min-width: 375px;
+  max-width: 1333px;
   background-color: var(--Magnolia);
 }
 
@@ -183,13 +185,19 @@ img {
 
 .container--master {
   justify-content: space-between;
-  min-height: 100vh;
+  position: relative;
+  height: 100vh;
+  min-height: 553px;
+  max-height: 653px;
+  max-width: 1333px;
 }
 
 .row--steps {
   background: url("/images/bg-sidebar-mobile.svg") no-repeat;
   background-size: cover;
   width: 100vw;
+  min-width: 375px;
+  min-height: 418px;
   padding: 2rem 0;
   min-height: 27vh;
 }
@@ -374,9 +382,14 @@ input[type="range"]::-webkit-slider-thumb {
     flex-flow: row nowrap;
     align-items: flex-start;
     padding: 1rem;
+
     width: 70vw;
     min-width: 797.20px;
+    max-width: 933.09px;
+
     height: 80vh;
+    min-height: 454.89px;
+    max-height: 522.39px;
     gap: 2.5rem;
   }
 
@@ -384,9 +397,12 @@ input[type="range"]::-webkit-slider-thumb {
     background: url("/images/bg-sidebar-desktop.svg") no-repeat;
     background-size: contain;
     width: 30%;
+    min-width: unset;
     padding: 2rem 1.5rem;
+
     height: calc(80vh - 2rem);
-    /*min-height: 490.39px;*/
+    min-height: 418px;
+    max-height: 490.39px;
     border-radius: .6rem;
   }
 
@@ -445,9 +461,9 @@ input[type="range"]::-webkit-slider-thumb {
   .footer {
     position: absolute;
     margin: 0;
-    top: 77vh;
+    top: 520px;
     width: 38%;
-    right: 20vmax;
+    right: 274px;
     padding: 0;
     background-color: var(--Alabaster);
   }
