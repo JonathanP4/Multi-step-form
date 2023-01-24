@@ -149,6 +149,13 @@ img {
   margin-left: auto;
 }
 
+.total--price {
+  color: var(--Purplish-blue);
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-left: auto;
+}
+
 .finish--intro,
 .change {
   font-size: 1rem;
@@ -318,6 +325,14 @@ img {
   height: 18px;
   border-radius: 3px;
   border: 1px solid var(--Cool-gray);
+}
+
+.total-price-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  width: 94%;
+  margin: 1rem auto;
 }
 
 .bi-check-square-fill {

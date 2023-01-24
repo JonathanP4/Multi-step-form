@@ -27,8 +27,9 @@ const finishUpTitle = document.querySelector('.finish-up--title')
 const finishUpPrice = document.querySelector('.finish-up-price--title')
 
 const change = document.querySelector('.change')
-
 const footer = document.querySelector('.footer')
+const totalText = document.querySelector('.total--text')
+const totalPrice = document.querySelector('.total--price')
 
 
 let x = 0
@@ -187,6 +188,25 @@ const changeBtn = (x) => {
    }
 }
 
+const totalUpdater = () => {
+   const n = +selectTime.value
+   const selectedAddonPrices = document.querySelectorAll('.finish-up-price')
+   const totalArr = []
+
+   const selectedPlanPrice = +finishUpPrice.textContent.match(/\d+/g)
+
+   if (finishForm.innerHTML.match('addon--plan')) {
+      selectedAddonPrices.forEach(el => {
+         totalArr.push(+el.textContent.match(/\d+/g))
+      })
+   }
+
+   const total = totalArr.reduce((acc, i) => acc + i, 0);
+   totalPrice.textContent = `+$${total + selectedPlanPrice}/${selectedItems.timeLabel}`;
+
+   totalText.textContent = `Total (per ${n === 0 ? 'month' : 'year'})`
+
+}
 const finished = () => {
    footer.remove()
    $('.step__3').addClass('step--active')
@@ -204,6 +224,7 @@ nextStepBtn.addEventListener('click', () => {
    if (x === 4) finished()
    changeBtn(x)
    toggleVisibility(x)
+   totalUpdater()
 })
 
 prevStepBtn.addEventListener('click', () => {
@@ -222,6 +243,7 @@ selectTime.addEventListener('mouseup', () => {
    toggleActiveText(val)
    updateElements(val)
    checkPlan(plan)
+   totalUpdater()
 
    if (finishForm.innerHTML.match('addon--plan')) {
       changeFinishPrices(val)
@@ -240,6 +262,7 @@ $('.plan').click(function () {
 
    const plan = document.querySelector('.plan--selected')
    checkPlan(plan)
+   totalUpdater()
 })
 
 addon.forEach((el, i) => {
@@ -248,5 +271,6 @@ addon.forEach((el, i) => {
       check[i].classList.toggle('bi--visible')
 
       addElement(i, el)
+      totalUpdater()
    })
 })
